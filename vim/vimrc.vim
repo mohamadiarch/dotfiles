@@ -63,8 +63,9 @@
 " => Vital Commands
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :h Notation
-
-
+" crtl + ] , (ctrl+ o , ctrl + i), gf, ctrl+w+gf ,helpg: word1.*word2 ===> follow links
+" docs ==> :h how-to | user-manual | quickref | :h 
+" :E , :ter , ls , mks name.vim, so name.vim
 
 
 
@@ -75,6 +76,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" open this vimrc file in new tab when execute ':Vimrc'
+command! Vimrc tabe C:\Users\mohammadi\vimfiles/vimrc " windows
+" command! Vimrc tabe ~/.vimrc " linux
+
 " Sets how many lines of history VIM has to remember. default is 50
 set history=500
 
@@ -99,7 +104,8 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
     command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
-
+set mouse=a                " Enables use of mouse in all modes
+set mousehide              " Hide mouse when typing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM searching
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -113,6 +119,8 @@ set smartcase
 
 " Highlight search results
 set hlsearch
+
+set synmaxcol=200   " Don't try to highlight long lines (for performance)
 
 " Makes search act like search in modern browsers ==> highlight by typing
 " for see dont use colon ==> :/word for search ==> just /word
@@ -147,6 +155,8 @@ endif
 " Set scrolloff= 7=> 7 lines to the cursor - when moving vertically using j/k
 " Minimal number of screen lines to keep above/bottom the cursor
 set so=7
+
+set title    " Set window title to filename
 
 set number 
 set relativenumber
@@ -189,7 +199,7 @@ set mat=2
 
 " No annoying sound on errors
 set noerrorbells
-set novisualbell
+set visualbell          " Rather than beeps
 set t_vb=
 set tm=500
 " Properly disable sound on errors on MacVim
@@ -384,6 +394,8 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" The custom dict lives in ~/.vim/spell/
+" set spell
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
