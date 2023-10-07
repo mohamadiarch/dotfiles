@@ -64,7 +64,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " :h Notation
 " crtl + ] , (ctrl+ o , ctrl + i), gf, ctrl+w+gf ,helpg: word1.*word2 ===> follow links
-" docs ==> :h how-to | user-manual | quickref | :h 
+" docs ==> :h how-to | user-manual | quickref | :h  | vert help
 " :E , :ter , ls , mks name.vim, so name.vim
 
 
@@ -307,6 +307,16 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+" Alt + j moving lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
 " Smart way to move between windows
 " use ctrl + j instead of ctrl+ w + j
 map <C-j> <C-W>j
