@@ -1,0 +1,1 @@
+-- neivim uses init.vim instead of vimrc.vim
